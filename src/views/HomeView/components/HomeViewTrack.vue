@@ -33,7 +33,7 @@
     <h3 class="mt-4 mb-1 font-semibold tracking-wide capitalize">
       {{ track.title }}
     </h3>
-    <p class="text-sm text-[#b3b3b3]">{{ track.artist }}</p>
+    <p class="text-sm text-gray-400">{{ track.artist }}</p>
   </div>
 </template>
 

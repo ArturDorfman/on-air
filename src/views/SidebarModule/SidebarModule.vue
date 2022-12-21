@@ -1,6 +1,6 @@
 <template>
   <aside
-    class="bg-black h-screen w-64 text-[#B2B2B2] hidden md:flex flex-col sticky top-0"
+    class="bg-black h-screen w-64 text-gray-400 hidden md:flex flex-col sticky top-0"
   >
     <a href="#" class="inline-block text-white ml-2">
       <div class="flex items-center w-full my-6 px-6">

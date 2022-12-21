@@ -7,4 +7,5 @@ export interface IPlaylistTrack {
   status: string;
   time: string;
   title: string;
+  album?: string;
 }

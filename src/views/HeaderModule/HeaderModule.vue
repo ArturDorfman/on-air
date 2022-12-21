@@ -5,7 +5,7 @@
     <div class="flex">
       <!-- TODO fix router links -->
       <!-- cursor-not-alowed -->
-      <RouterLink to="" class="text-[#969696] p-1 ml-2">
+      <RouterLink to="" class="text-gray-400 p-1 ml-2">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
@@ -22,7 +22,7 @@
         </svg>
       </RouterLink>
 
-      <RouterLink to="" class="text-[#969696] p-1 mr-2">
+      <RouterLink to="" class="text-gray-400 p-1 mr-2">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
