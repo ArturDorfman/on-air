@@ -1,5 +1,7 @@
 <template>
-  <header>
+  <header
+    class="bg-[#070707] flex-1 flex justify-between items-center py-3 px-8 sticky top-0 z-10"
+  >
     <div class="flex">
       <!-- TODO fix router links -->
       <!-- cursor-not-alowed -->
@@ -38,7 +40,7 @@
       </RouterLink>
     </div>
 
-    <div>
+    <div class="hidden sm:block">
       <button
         class="text-white text-sm font-semibold leading-5 tracking-widest uppercase py-2 px-8 rounded-full hover:scale-105"
       >

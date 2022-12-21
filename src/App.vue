@@ -1,13 +1,9 @@
 <template>
   <div class="flex items-start">
-    <SideBarModule
-      class="bg-black h-screen w-64 text-[#B2B2B2] flex flex-col sticky top-0"
-    />
+    <SideBarModule />
 
     <div class="flex-1">
-      <HeaderModule
-        class="bg-[#070707] flex-1 flex justify-between items-center py-3 px-8 sticky top-0"
-      />
+      <HeaderModule />
 
       <main>
         <RouterView />
