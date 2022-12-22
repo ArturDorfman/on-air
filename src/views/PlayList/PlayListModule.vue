@@ -1,5 +1,8 @@
 <template>
-  <div class="relative pt-6 px-8 pb-12">
+  <div
+    class="relative pt-6 px-8 pb-12"
+    :class="{ 'h-screen': !playlist?.length }"
+  >
     <h1 class="text-white text-4xl pt-5 pb-5">Nowplaying</h1>
 
     <table class="w-full">
@@ -19,7 +22,7 @@
         <SimpleTrackPreview :track="track" />
 
         <td class="text-gray-400">
-          {{ track.album || "not found album name" }}
+          {{ track.album || "no album name" }}
         </td>
 
         <td class="text-gray-400">

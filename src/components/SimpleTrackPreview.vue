@@ -1,7 +1,12 @@
 <template>
   <div class="flex items-center mx-3">
-    <div class="w-16 mr-2">
-      <img :src="track.previewUrl || track.imageUrl" alt="track preview" />
+    <div class="mr-2" :class="[customImgWidth || 'w-16']">
+      <img
+        v-if="track.imageUrl"
+        :src="track.previewUrl || track.imageUrl"
+        alt="track preview"
+      />
+      <div v-else class="w-16 h-16 bg-info"></div>
     </div>
 
     <div class="space-y-2">
@@ -16,5 +21,6 @@ import type { IPlaylistTrack } from "@/types/general.types";
 
 defineProps<{
   track: IPlaylistTrack;
+  customImgWidth?: string;
 }>();
 </script>

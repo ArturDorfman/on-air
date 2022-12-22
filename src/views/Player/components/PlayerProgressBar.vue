@@ -19,7 +19,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, computed, reactive } from "vue";
+import { ref, onMounted, computed } from "vue";
 import type { IPlaylistTrack } from "@/types/general.types";
 
 const progress = ref(0);
