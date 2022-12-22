@@ -3,7 +3,9 @@
     class="relative pt-6 px-8 pb-12"
     :class="{ 'h-screen': !playlist?.length }"
   >
-    <h1 class="text-white text-4xl pt-5 pb-5">Nowplaying</h1>
+    <h1 class="text-2xl font-semibold hover:underline capitalize">
+      Nowplaying
+    </h1>
 
     <table class="w-full">
       <tr>

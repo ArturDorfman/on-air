@@ -1,11 +1,11 @@
 <template>
   <div class="flex items-center w-full">
-    <div class="text-white w-1/4 flex justify-end px-3">
+    <div class="text-xs text-white w-1/4 flex justify-end px-3">
       {{ time }}
     </div>
 
     <div class="flex-grow">
-      <div class="h-3 relative rounded-full overflow-hidden">
+      <div class="h-1 relative rounded-full overflow-hidden">
         <div class="w-full h-full bg-gray-200 absolute"></div>
         <div
           class="transition-all ease-out duration-2000 h-full bg-green-500 relative"
@@ -14,7 +14,7 @@
       </div>
     </div>
 
-    <div class="text-white w-1/4 px-3">{{ currentTrack.duration }}</div>
+    <div class="text-xs text-white w-1/4 px-3">{{ currentTrack.duration }}</div>
   </div>
 </template>
 

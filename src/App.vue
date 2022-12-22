@@ -12,7 +12,9 @@
               class="h-[275px] bg-gradient-to-b from-[#1f1f1f] tp-[#121212] absolute w-full"
             ></div>
 
-            <RouterView />
+            <transition name="fade" mode="out-in">
+              <RouterView />
+            </transition>
           </div>
         </main>
       </div>
