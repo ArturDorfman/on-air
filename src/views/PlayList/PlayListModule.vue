@@ -16,19 +16,7 @@
       <tr v-for="(track, idx) in playlist" :key="track.time" class="space-y-8">
         <td>{{ idx + 1 }}</td>
 
-        <div class="flex items-center mx-3">
-          <div class="w-16 mr-2">
-            <img
-              :src="track.previewUrl || track.imageUrl"
-              alt="track preview"
-            />
-          </div>
-
-          <div class="space-y-2">
-            <h3 class="text-lg">{{ track.title }}</h3>
-            <p class="text-gray-400 text-sm">{{ track.artist }}</p>
-          </div>
-        </div>
+        <SimpleTrackPreview :track="track" />
 
         <td class="text-gray-400">
           {{ track.album || "not found album name" }}
@@ -50,6 +38,8 @@
 import { computed } from "vue";
 import { usePlaylistStore } from "@/stores/play-list.store";
 import dayjs from "dayjs";
+
+import SimpleTrackPreview from "@/components/SimpleTrackPreview.vue";
 
 const playlistStore = usePlaylistStore();
 

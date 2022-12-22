@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from "vue-router";
-import HomeView from "@/views/HomeView/HomeView.vue";
+import HomeView from "@/views/Home/HomeModule.vue";
 
 const routerNames = {
   home: "home",
@@ -17,7 +17,7 @@ const router = createRouter({
     {
       path: "/playlist",
       name: routerNames.playlist,
-      component: () => import("@/views/PlayListView/PlaylistView.vue"),
+      component: () => import("@/views/PlayList/PlayListModule.vue"),
     },
   ],
 });

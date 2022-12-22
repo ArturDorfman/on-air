@@ -1,51 +1,55 @@
 <template>
-  <div class="flex items-start">
-    <SideBarModule />
+  <div class="relative">
+    <div class="flex items-start">
+      <SideBarModule />
 
-    <div class="flex-1">
-      <HeaderModule />
+      <div class="flex-1">
+        <HeaderModule />
 
-      <main>
-        <div class="h-full md:h-screen bg-[#121212] text-white relative">
-          <div
-            class="h-[275px] bg-gradient-to-b from-[#1f1f1f] tp-[#121212] absolute w-full"
-          ></div>
+        <main>
+          <div class="bg-[#121212] text-white relative">
+            <div
+              class="h-[275px] bg-gradient-to-b from-[#1f1f1f] tp-[#121212] absolute w-full"
+            ></div>
 
-          <!-- TODO Fix loader -->
-          <LoaderModule v-if="false" />
-
-          <RouterView />
-        </div>
-      </main>
+            <RouterView />
+          </div>
+        </main>
+      </div>
     </div>
+
+    <PlayerModule />
   </div>
 </template>
 
 <script setup lang="ts">
 import { onMounted, ref } from "vue";
 import { RouterView } from "vue-router";
-import { playlist } from "@/mockData";
 import { usePlaylistStore } from "@/stores/play-list.store";
 
-import SideBarModule from "@/views/SidebarModule/SidebarModule.vue";
-import HeaderModule from "@/views/HeaderModule/HeaderModule.vue";
-import LoaderModule from "@/components/LoaderModule.vue";
+import SideBarModule from "@/views/Sidebar/SidebarModule.vue";
+import HeaderModule from "@/views/Header/HeaderModule.vue";
+import PlayerModule from "@/views/Player/PlayerModule.vue";
 
-const loading = ref(false);
+const requestDelay = ref(2000);
 
 const playlistStore = usePlaylistStore();
 
-async function init() {
+async function getPlaylist() {
   try {
-    loading.value = true;
-    setInterval(() => {
-      playlistStore.getPlaylist(playlist);
-    }, 2000);
+    await playlistStore.getPlaylist(
+      "https://onair.radioapi.io/thisisgo/go/onair.json"
+    );
   } catch (err) {
     console.log(err);
-  } finally {
-    loading.value = false;
   }
+}
+
+function init() {
+  let timerId = setTimeout(function tick() {
+    getPlaylist();
+    timerId = setTimeout(tick, requestDelay.value);
+  }, requestDelay.value);
 }
 
 onMounted(init);

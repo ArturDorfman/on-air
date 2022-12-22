@@ -7,12 +7,9 @@ import type { IPlaylistTrack } from "@/types/general.types";
 export const usePlaylistStore = defineStore("playlistStore", () => {
   const playlist = ref<IPlaylistTrack[] | null>(null);
 
-  async function getPlaylist(list: IPlaylistTrack[], url?: string) {
-    if (url) {
-      playlist.value = await axios.get(url);
-    } else {
-      playlist.value = list;
-    }
+  async function getPlaylist(payload: string) {
+    const { data } = await axios.get(payload);
+    playlist.value = data.nowplaying;
   }
 
   return {

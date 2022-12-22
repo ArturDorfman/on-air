@@ -1,5 +1,5 @@
 <template>
-  <div class="relative pt-6 px-8 pb-12">
+  <div class="relative pt-6 px-8 pb-12 h-screen">
     <div>
       <div class="flex justify-between items-end mb-4">
         <h2 class="text-2xl font-semibold hover:underline capitalize">
@@ -30,7 +30,7 @@ import { RouterLink } from "vue-router";
 import { routerNames } from "@/router";
 import { usePlaylistStore } from "@/stores/play-list.store";
 
-import HomeViewTrack from "@/views/HomeView/components/HomeViewTrack.vue";
+import HomeViewTrack from "@/views/Home/components/HomeModuleTrack.vue";
 
 const playlistStore = usePlaylistStore();
 const playlistPreview = computed(() => playlistStore.playlist?.slice(0, 8));
